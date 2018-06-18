@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>18设计 06</title>
+	</head>
+	<style>
+		ul li{display:block; /*list-style-type:none*/}
+		
+		.container{
+			min-width: 1440px;
+			height:900px;
+			border:3px solid darkturquoise;
+			position:relative;
+			overflow: hidden;
+			box-sizing: border-box;
+		}
+		
+		.btns{
+			z-index:10;
+			width:90%;
+			position:absolute;
+			padding:0;
+			bottom:20px;
+			display:flex;
+			left:50%;
+			margin-left:-45%;
+			justify-content: space-between;
+			
+		}
+		.btns li{
+			padding:5px;
+		}
+		.btns li img{
+			vertical-align: bottom;  /*用img撑开li的话，img是行内元素，它是从基线开始的，那么底部就会留5px的白*/
+			width:250px;
+			height: 250px;
+			border-radius:50%;
+		}
+		.btns li{
+			outline: 3px solid aquamarine;
+		}
+		.toshow{
+			position:relative;
+			padding:0;
+			margin:0;
+			}
+		.toshow li {
+			position:fixed;
+			height:900px;
+			width:98.8%;
+			background-size:100% 100%;
+		}	
+		.toshow li:nth-child(1){background-image:url(img/1.jpg);}
+		.toshow li:nth-child(2){background-image:url(img/2.jpg);}
+		.toshow li:nth-child(3){background-image:url(img/3.jpg);}
+		.toshow li:nth-child(4){background-image:url(img/4.jpg);}
+		.toshow li:nth-child(5){background-image:url(img/5.jpg);}
+		
+	
+		.toshow li:nth-child(1):target{
+			animation: ani1 0.5s ease-out;
+			z-index:5;
+		}
+		@keyframes ani1{
+			from{transform:translateX(-500px)}
+			to{transform: translateX(0);}
+		}
+		.toshow li:nth-child(2):target{
+			animation:ani2 0.5s ease-out;
+			z-index:5;
+		}
+		@keyframes ani2{
+			from{top:350px}
+			to{top:0}
+		}
+		.toshow li:nth-child(3):target{
+			animation:ani3 1s ease-in;
+			z-index:5;
+		}
+		@keyframes  ani3{
+			from{transform:scale(0.1)}
+			to{transform:scale(1.0)}
+		}
+		.toshow li:nth-child(4):target{
+			animation:ani4 1s ease-out;
+			z-index:5;
+		}
+		@keyframes ani4{
+			from{transform:scale(2)}
+			to{transform:scale(1)}
+		}
+		.toshow li:nth-child(5):target{
+			animation:ani5 0.7s ease-in-out;
+			z-index:5;
+		}
+		@keyframes ani5{
+			from{transform:rotate(-360deg) scale(0.1)}
+			to{transform:rotate(0deg) scale(1.0) }
+		}
+		@keyframes  notTarget{
+			from{z-index:3}
+			to{z-index:3}
+		}
+		
+		.toshow li:not(:target){
+			animation:notTarget 1s linear;
+		}
+		
+	</style>
+	<body>
+		<div class="container">
+			<ul class="toshow">
+				<li id="img1"></li>
+				<li id="img2"></li>
+				<li id="img3"></li>
+				<li id="img4"></li>
+				<li id="img5"></li>
+			</ul>
+			
+			<ul class="btns">
+				<li><a href="#img1"><img src="img/1.jpg"></a></li>
+				<li><a href="#img2"><img src="img/2.jpg"></a></li>
+				<li><a href="#img3"><img src="img/3.jpg"></a></li>
+				<li><a href="#img4"><img src="img/4.jpg"></a></li>
+				<li><a href="#img5"><img src="img/5.jpg"></a></li>
+			</ul>
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>18设计 04 </title>
+	</head>
+	<style>
+		ul{
+			position:relative;
+			perspective: 800px;	
+			padding:0;
+		}
+		li{
+			left:50%;
+			margin-left:-125px;
+			position:absolute;
+			transform-style: preserve-3d;
+			display:inline-block;
+			list-style-type: none;
+			transition:z-index 1s cubic-bezier(0.5,1,1,0.5);
+		}
+		li:nth-child(1){
+			z-index:10
+		}
+		li:nth-child(2){
+			z-index:5
+		}
+		li img{
+			transition:transform 1s cubic-bezier(0.5,1,1,0.5);
+		}
+		li:nth-child(2) img{
+			transform:rotateY(180deg)
+		}
+		ul:hover li:nth-child(1){
+			z-index:5;
+		}
+		ul:hover li:nth-child(2){
+			z-index:10;
+		}
+		 ul:hover li:nth-child(1) img {
+			transform:rotateY(180deg)
+		}
+		ul:hover li:nth-child(2) img{
+			transform:rotateY(360deg)
+		}
+		/*
+		 用absolute把两个图片覆盖在一起
+		 ul作为舞台设置视角，给每个li设置transform-style的3d效果
+		 翻转的时候改变z-index来让上面的图片下去，下面的图片上来，z-index也要设置transition，来保持和rotate效果的同步
+		 一个由0翻到180deg 另一个由0翻到360deg ，然后写个贝塞尔。 所以，好复杂！！  = =
+		 
+		 * */
+
+
+	</style>
+	<body>
+		<ul>
+			<li><img src="img/正面.jpg"></li>
+			<li><img src="img/反面.jpg"></li>
+		</ul>
+	</body>
+</html>

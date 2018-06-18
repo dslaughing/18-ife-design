@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	
+	<style>
+		div{
+			margin-top:100px;
+			display:flex;
+			width:600px;
+			justify-content: space-around;
+		}
+		
+		
+		.box{
+			text-align: center;
+			border:1px solid darkgray;
+			background:#f7f6f6;
+			width:50px;
+			line-height:50px;
+		}
+		
+		.box1{
+			transform: skewX(30deg);
+			-ms-transform: skewX(30deg);	
+			-webkit-transform: skewX(30deg);	
+			-o-transform: skewX(30deg);	
+			-moz-transform: skewX(30deg);	
+		}
+		
+		.box2{
+			border-right: 2px solid darkgray;
+			transform: scaleX(0.5);
+			-ms-transform: scaleX(0.5);	/* IE 9 */
+			-webkit-transform: scaleX(0.5);	/* Safari and Chrome */
+			-o-transform:scaleX(0.5);	/* Opera */
+			-moz-transform: scaleX(0.5);	/* Firefox */
+		}
+		.box3{
+			transform: rotate(45deg);
+			-ms-transform: rotate(45deg);	
+			-webkit-transform: rotate(45deg);	
+			-o-transform: rotate(45deg);	
+			-moz-transform: rotate(45deg);	
+		}
+		.box4{
+			transform: translate(10px,20px);
+			-ms-transform: translate(10px,20px);	
+			-webkit-transform: translate(10px,20px);	
+			-o-transform: translate(10px,20px);	
+			-moz-transform: translate(10px,20px);	
+		}
+		.box5{
+			transform:skewX(30deg) scaleX(0.5) rotate(45deg) translate(10px,20px);
+			-ms-transform: skewX(30deg) scaleX(0.5) rotate(45deg) translate(10px,20px);	
+			-webkit-transform: skewX(30deg) scaleX(0.5) rotate(45deg) translate(10px,20px);	
+			-o-transform: skewX(30deg) scaleX(0.5) rotate(45deg) translate(10px,20px);	
+			-moz-transform: skewX(30deg) scaleX(0.5) rotate(45deg) translate(10px,20px);	
+		}
+
+	</style>
+	
+	
+	<body>
+		<div>
+		<span class="box">box0</span>
+		<span class="box box1">box1</span>
+		<span class="box box2">box2</span>
+		<span class="box box3">box3</span>
+		<span class="box box4">box4</span>
+		<span class="box box5">box5</span>
+		</div>
+		
+	</body>
+</html>
